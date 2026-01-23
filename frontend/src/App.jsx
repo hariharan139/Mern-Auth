@@ -1,15 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Register from "./components/auth/Register";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import UserDetails from "./Components/Auth/UserDetails";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/userDetails" element={<UserDetails />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
